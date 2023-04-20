@@ -4,6 +4,7 @@ pascal_triangle interview
 """
 # from math import factorial
 
+
 def factorial(n):
     """generate factorial
 
@@ -13,10 +14,11 @@ def factorial(n):
     Returns:
         int: return an int
     """
-    if (n==1 or n==0):
+    if (n == 1 or n == 0):
         return 1
     else:
         return (n * factorial(n - 1))
+
 
 def pascal_triangle(n):
     """pascal_triangle
