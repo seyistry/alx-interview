@@ -6,6 +6,14 @@ from math import factorial
 
 
 def pascal_triangle(n):
+    """pascal_triangle
+
+    Args:
+            n (int): size of triangle
+
+    Returns:
+            list: list of list
+    """
     outer_list = []
     if n <= 0:
         return outer_list
