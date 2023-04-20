@@ -2,7 +2,7 @@
 """
 pascal_triangle interview
 """
-from math import factorial
+# from math import factorial
 
 
 def pascal_triangle(n):
