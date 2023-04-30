@@ -40,11 +40,12 @@ def canUnlockAll(boxes):
         if key == 0:
             ownedKeys.extend(boxes[0])
         else:
-            locked = find_indices(unlock, False)
-            for falseKeyIndex in locked:
-                if falseKeyIndex in ownedKeys:
-                    ownedKeys.extend(boxes[falseKeyIndex])
-                    unlock[falseKeyIndex] = True
+            if key == len(boxes) - 2:
+                locked = find_indices(unlock, False)
+                for falseKeyIndex in locked:
+                    if falseKeyIndex in ownedKeys:
+                        ownedKeys.extend(boxes[falseKeyIndex])
+                        unlock[falseKeyIndex] = True
             if (key in ownedKeys or key in boxes[key]):
                 ownedKeys.extend(boxes[key])
                 unlock.append(True)
