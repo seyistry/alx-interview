@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Minimum Operations 
+"""Minimum Operations
 
     Returns:
         int: return min operation of copy and paste
@@ -31,8 +31,8 @@ def primeFactors(n):
 
 def minOperations(n):
     """ method that calculates
-        the fewest number of operations 
-        needed to result in exactly n H 
+        the fewest number of operations
+        needed to result in exactly n H
         characters in the file.
 
     Args:
