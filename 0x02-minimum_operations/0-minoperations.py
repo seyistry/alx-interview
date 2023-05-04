@@ -1,7 +1,14 @@
 #!/usr/bin/python3
+"""Minimum Operations 
+
+    Returns:
+        int: return min operation of copy and paste
+    """
 
 # This prime factor is from GeekofGeek
 # and contributed by Taranpreet.
+
+
 def primeFactors(n):
     """calculate prime factors
 
@@ -20,7 +27,6 @@ def primeFactors(n):
         else:
             c = c + 1
     return arr
-
 
 
 def minOperations(n):
