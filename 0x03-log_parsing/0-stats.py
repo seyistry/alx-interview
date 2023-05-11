@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """0x03. Log Parsing
-	"""
+    """
 
 import fileinput
 import sys
@@ -25,8 +25,8 @@ if __name__ == '__main__':
                     else:
                         add_status_call[int(
                             arr[-2])] = add_status_call[int(arr[-2])] + 1
-            except:
-                con
+            except TypeError():
+                continue
             if count == 10:
                 print(f"File size: {file_size}")
                 for key in sorted(add_status_call):
