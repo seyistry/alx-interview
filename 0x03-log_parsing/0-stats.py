@@ -28,15 +28,15 @@ if __name__ == '__main__':
             except TypeError():
                 continue
             if count == 10:
-                print(f"File size: {file_size}")
+                print("File size: {}".format(file_size))
                 for key in sorted(add_status_call):
-                    print(f"{key}: {add_status_call[key]}")
+                    print("{}: {}".format(key, add_status_call[key]))
                 count = 0
                 file_size = 0
     except KeyboardInterrupt:
-        print(f"File size: {file_size}")
+        print("File size: {}".format(file_size))
         for key in sorted(add_status_call):
-            print(f"{key}: {add_status_call[key]}")
+            print("{}: {}".format(key, add_status_call[key]))
         try:
             sys.exit(130)
         except SystemExit:
