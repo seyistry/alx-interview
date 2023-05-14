@@ -16,7 +16,7 @@ try:
         arr = str(line).strip().split(" ")
         try:
             file_size = file_size + int(arr[-1])
-        except:
+        except ValueError():
             continue
         try:
             if int(arr[-2]) in allowed_status_code:
