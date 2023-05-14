@@ -24,11 +24,10 @@ try:
                         arr[-2])] = add_status_call[int(arr[-2])] + 1
         except TypeError():
             continue
-        if count == 10:
+        if count % 10 == 0:
             print("File size: {}".format(file_size))
             for key in sorted(add_status_call):
                 print("{}: {}".format(key, add_status_call[key]))
-            count = 0
             # file_size = 0
     print("File size: {}".format(file_size))
     for key in sorted(add_status_call):
