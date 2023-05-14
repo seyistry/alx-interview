@@ -29,7 +29,10 @@ try:
             for key in sorted(add_status_call):
                 print("{}: {}".format(key, add_status_call[key]))
             count = 0
-            file_size = 0
+            # file_size = 0
+    print("File size: {}".format(file_size))
+    for key in sorted(add_status_call):
+        print("{}: {}".format(key, add_status_call[key]))
 except KeyboardInterrupt:
     print("File size: {}".format(file_size))
     for key in sorted(add_status_call):
