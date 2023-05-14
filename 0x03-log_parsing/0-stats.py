@@ -16,7 +16,7 @@ try:
         arr = str(line).strip().split(" ")
         try:
             file_size = file_size + int(arr[-1])
-        except ValueError():
+        except ValueError:
             continue
         try:
             if int(arr[-2]) in allowed_status_code:
@@ -25,7 +25,7 @@ try:
                 else:
                     add_status_call[int(
                         arr[-2])] = add_status_call[int(arr[-2])] + 1
-        except TypeError():
+        except TypeError:
             continue
         if count % 10 == 0:
             print("File size: {}".format(file_size))
