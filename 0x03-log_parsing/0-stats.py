@@ -14,7 +14,10 @@ try:
     for line in sys.stdin:
         count = count + 1
         arr = str(line).strip().split(" ")
-        file_size = file_size + int(arr[-1])
+        try:
+            file_size = file_size + int(arr[-1])
+        except:
+            continue
         try:
             if int(arr[-2]) in allowed_status_code:
                 if int(arr[-2]) not in add_status_call:
