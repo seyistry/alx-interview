@@ -6,8 +6,7 @@ Validate if list of int are all valid UTF-8
 
 def validUTF8(data):
     for i in data:
-        x = bool(i & (1 << (8 - 1) ))
-        if x == True:
+        x = bool(i & (1 << (8 - 1)))
+        if x is True:
             return False
     return True
-    
