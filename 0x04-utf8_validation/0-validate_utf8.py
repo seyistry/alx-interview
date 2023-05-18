@@ -14,7 +14,11 @@ def validUTF8(data):
             a = bool(i & (1 << (8 - 1)))
             b = bool(i & (1 << (15 - 1)))
             c = bool(i & (1 << (16 - 1)))
-            if (a and b and c) is not True:
+            d = bool(i & (1 << (7 - 1)))
+            e = bool(i & (1 << (14 - 1)))
+            check_onces = (a and b and c)
+            check_zeroes = not (d or e)
+            if not(check_onces and check_zeroes):
                 return False
         elif i in range(65536, 16777216):
             a = bool(i & (1 << (8 - 1)))
@@ -22,7 +26,12 @@ def validUTF8(data):
             c = bool(i & (1 << (22 - 1)))
             d = bool(i & (1 << (23 - 1)))
             e = bool(i & (1 << (24 - 1)))
-            if (a and b and c and d and e) is not True:
+            f = bool(i & (1 << (7 - 1)))
+            g = bool(i & (1 << (15 - 1)))
+            h = bool(i & (1 << (21 - 1)))
+            check_onces = (a and b and c and d and e)
+            check_zeroes = not (f or g or h)
+            if not(check_onces and check_zeroes):
                 return False
         elif i in range(16777216, 4294967296):
             a = bool(i & (1 << (8 - 1)))
@@ -32,7 +41,13 @@ def validUTF8(data):
             e = bool(i & (1 << (30 - 1)))
             f = bool(i & (1 << (31 - 1)))
             g = bool(i & (1 << (32 - 1)))
-            if (a and b and c and d and e and f and g) is not True:
+            h = bool(i & (1 << (7 - 1)))
+            j = bool(i & (1 << (15 - 1)))
+            k = bool(i & (1 << (23 - 1)))
+            l = bool(i & (1 << (28 - 1)))
+            check_onces = (a and b and c and d and e and f and g)
+            check_zeroes = not (j or j or k or l)
+            if not(check_onces and check_zeroes):
                 return False
         else:
             return False
