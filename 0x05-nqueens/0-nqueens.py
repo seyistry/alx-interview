@@ -1,43 +1,29 @@
 #!/usr/bin/python3
 import sys
 
-def solveNQueens(n):
-    """
-    :type n: int
-    :rtype: List[List[str]]
-    """
-    def dfs(curr, cols, main_diag, anti_diag, result):
-        row, n = len(curr), len(cols)
-        if row == n:
-            result.append(map(lambda x: '.'*x + "Q" + '.'*(n-x-1), curr))
-            return
-        for i in range(n):
-            if cols[i] or main_diag[row+i] or anti_diag[row-i+n]:
-                continue
-            cols[i] = main_diag[row+i] = anti_diag[row-i+n] = True
-            curr.append(i)
-            dfs(curr, cols, main_diag, anti_diag, result)
-            curr.pop()
-            cols[i] = main_diag[row+i] = anti_diag[row-i+n] = False
 
-    result = []
-    cols, main_diag, anti_diag = [False]*n, [False]*(2*n), [False]*(2*n)
-    dfs([], cols, main_diag, anti_diag, result)
-    print(result[1])
-    return result
+def queens(n, i, a, b, c):
+    if i < n:
+        for j in range(n):
+            if j not in a and i+j not in b and i-j not in c:
+                yield from queens(n, i+1, a+[j], b+[i+j], c+[i-j])
+    else:
+        yield a
+
 
 if (len(sys.argv) == 2):
     try:
         if (int(sys.argv[1]) >= 4):
-            solveNQueens(int(sys.argv[1]))
+            for solution in queens(int(sys.argv[1]), 0, [], [], []):
+                for item in range(len(solution)):
+                    solution[item] = [item, solution[item]]
+                print(solution)
         else:
             print("N must be at least 4\n")
             sys.exit(1)
-    except TypeError as e:
+    except ValueError as e:
         print("N must be a number\n")
         sys.exit(1)
 else:
     print("Usage: nqueens N\n")
     sys.exit(1)
-
-
