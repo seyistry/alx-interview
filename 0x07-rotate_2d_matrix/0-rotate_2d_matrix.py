@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import copy
 """Rotate 2D Matrix
     """
 
@@ -12,7 +11,7 @@ def rotate_2d_matrix(matrix):
     Args:
         matrix (list): n x n matrix
     """
-    result = copy.deepcopy(matrix)
+    result = [i[:] for i in matrix]
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
             sub = len(matrix)-(j+1)
