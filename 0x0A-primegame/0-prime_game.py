@@ -5,6 +5,15 @@ Test 0x0A - Prime Game
 
 
 def isPrime(num):
+    """check if number is prime
+
+    Args:
+            num (int): a single int
+
+    Returns:
+            bool: return bool
+    """
+
     if num > 1:
         # Iterate from 2 to n / 2
         for i in range(2, int(num/2)+1):
@@ -19,6 +28,15 @@ def isPrime(num):
 
 
 def createList(num):
+    """create an arr of int
+
+    Args:
+            num (list): list of int
+
+    Returns:
+            list: return list
+    """
+
     num_list = []
     for i in range(1, num + 1):
         num_list.append(i)
@@ -26,6 +44,16 @@ def createList(num):
 
 
 def isWinner(x, nums):
+    """check who wins
+
+    Args:
+            x (int): number of rounds
+            nums (list): list of each game
+
+    Returns:
+            string: return who wins
+    """
+
     maria_score = 0
     ben_score = 0
     total_primes = 0
